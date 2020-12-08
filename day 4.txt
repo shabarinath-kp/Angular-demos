@@ -1,0 +1,286 @@
+1)bindings
+
+2) C2C
+@Input()
+@Output()
+EventEmitter<T>
+
+3)Directives
+
+Structural Directives
+*ngFor
+*ngIF
+
+else
+
+<ng-template>
+
+template reference variables
+
+<ng-template>
+<ng-container>
+
+
+===================
+
+use case - apply conditional formatting / reterive the data..
+
+w.r.t *ngFor
+
+1) get the first record /last record in my data source
+2)get the odd records / even records in my data source
+3) what is  the count / length of items in array..
+
+*ngFor -> provides some reserved words
+
+1)first 
+2)last
+3)odd
+4)even
+5)count
+6)index
+7)trackby - improve the performance of the app
+
+==============================================
+
+tr are recreated /regenerated /rerendered.
+
+============================================
+
+
+attribute directives
+
+ngStyle = defined multiple css styles and refer them based on the condition
+
+ngClass -> have a CSS class defined => you can call / invoke the css class based on the condition here
+
+
+=============================================
+
+how to apply CSS in html
+
+<div style="color:red;font-family:Calibri"> lsjdhflsdhflsjdf </div>
+
+
+or
+
+<style>
+ 
+ .test {
+color:red;
+font-family:Calibri;
+ }
+
+</style>
+
+<div class="test"> lsdflsjdfljsdl </div>
+
+
+================================
+
+ngStyle => <div style="color:red;font-family:Calibri"> lsjdhflsdhflsjdf </div>
+
+
+ngClass => <div class="test"> lsdflsjdfljsdl </div>
+
+1)they are dynamic
+2)conditional formatting
+
+
+=============================
+
+
+Create a custom attribute directive
+
+1)modify the UI
+2)validation
+
+
+====================
+
+
+1) @Directive()
+2) class -> function
+3)registered in app.module.ts
+4)selector
+
+=====================
+
+ng generate directive <<nameofthedirective>>
+
+ng g d <<nameofthedirective>>
+
+
+==========================
+
+ElementRef -> refer to the TAG where this Directive is applied
+Renderer2 -> apply the CSS
+
+@HostListener() -> execute the UI changes based on the ACTION / Event
+that is triggered by the host tag
+
+
+@HostBinding
+===========================
+
+
+1) dynamic values
+2) execute the UI changes based on a event
+
+==========================
+
+Passing data to the directive with binding
+
+
+for passing values to the directive -> @Input()
+
+
+1)
+
+directive selector name and paramter to @Input () have to be same
+
+
+@Directive({
+  selector: '[appChangeColour]'
+})
+
+  @Input('appChangeColour') highlightColor: string;  
+
+
+=> 
+
+<h1 [appChangeColour]="'orange'"> lsdflsdflsdf </h1>
+
+2) in case @Input () doesnot take any paramter ..
+
+@Directive({
+  selector: '[appChangeColourBasedOnUserInput]'
+})
+
+export class ChangeColourBasedOnUserInputDirective {
+
+  private _defaulColor = 'red';
+  
+@Input('appChangeColourBasedOnUserInput') highlightColor: string;  
+
+
+=>
+
+<h1 [appChangeColourBasedOnUserInput]="'cyan'">Change color based on user input</h1>
+ 
+
+==============================================
+
+ViewEncapsulation
+
+=>controls the CSS =>style isolation w.r.t components
+
+or
+
+css scoping 
+
+================================================
+
+ViewEncapsulation -> Enum
+
+if no css is mentioned @ cmp level => then Global CSS defined in styles.css will be applied across all the cmps
+
+=========================
+
+ViewEncapsulation.emulated -> default
+
+if  css is mentioned @ cmp level =>  for conflicting attributes -> local css will override global css and will be applied
+
+global css is also applied for NON Conflicting attributes
+
+
+=======================
+
+
+ViewEncapsulation.None
+
+Root cmp  CSS will be applied for all child cmps + 
++
+global css is also applied for NON Conflicting attributes
+
+=================================
+
+ViewEncapsulation.ShadowDom
+
+
+
+Root cmp  CSS will be applied for all child cmps + 
++
+global css is NOT  applied 
+
+================================
+
+on the Root Component
+
+================================
+
+on the PArent Component
+
+
+on the child Component
+
+============================
+
+ Component life cycle hooks
+
+a) managed by angular
+b)automatically called by angular
+c) interfaces -> implement the interface
+d) constructor() is always called first
+e)
+ 
+
+=======================
+
+OnInit -> initialization
+
+OnDestroy -> just before the cmp is unloaded / destroyed  from the dom tree, this event is called. 
+
+uninitialization
+Unsubscription / unregisteration
+
+===================
+
+AfterContentInit -> called After Content is avaliable (initialized)
+AfterViewInit -> called After View is avaliable (initialized)
+
+
+===========================
+
+View - UI
+
+Content=>
+
+<app-parent> sdjkflsdhflsjhflsdjh </app-parent>
+
+=========================
+
+DoCheck ->customize Change Detector / Change Detection alogrithm
+
+OnChanges -> fired when the value of @Input() changes
+
+AfterContentChecked -> is fired for the Content After Change Detection is over
+
+AfterViewChecked -> is fired for the View After Change Detection is over
+
+=======================
+ngDoBootstrap() - application level event
+
+=======================
+
+
+
+
+
+
+
+
+
+
+
+

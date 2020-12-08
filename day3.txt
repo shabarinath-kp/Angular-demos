@@ -1,0 +1,249 @@
+1) Components
+
+========================================
+
+2)Databinding
+
+one way binding
+two way binding
+
+eventbinding
+
+property binding
+
+attribute binding
+
+style binding => style
+
+
+class binding
+
+Css classes ="""??
+
+======================================
+
+style binding
+
+
+<span > ksjhdflsdflsdflsdlhsg </span>
+
+
+ age:number;
+
+
+===============================
+
+if the age > = 30 is true => then text of span tag has be font-size of 20px
+
+if var is false -> then text of span tag has be font-size of 40px
+
+conditonal formating of data
+
+
+===========================
+
+
+<span [class.boldText]>toggled with ngClass</span> 
+
+===================
+
+.boldText
+ {
+
+}
+
+======================
+
+can we use or add custom property in css = YES
+
+Angular 9 onwards
+
+======================
+
+C2C
+
+1)Pass data from Parent cmp to Child cmp -> @Input()
+
+2)Pass data from Child cmp to PArent cmp ->@Ouput()
+
+
+SErvices with DI + RXJS / 3 party libraries
+
+3)Pass data between  sibiling cmps
+4)Pass data from Complex hierarchial cmps
+
+
+=============================
+
+to pass data between cmps in angular
+
+1)@Input(), @Ouput() decorators
+2)Routing
+3)SErvices with DI + RXJS
+4) 3 party libraries
+5)storage api
+
+==========================
+
+
+C2C
+
+1)Pass data from Parent cmp to Child cmp 
+
+  <app-child [valFrmParent]="result"></app-child> => Property binding
+
+<app-child [valFrmParent]="{{result}}"></app-child>
+
+ ===========================================
+
+
+child cmp to parent cmp -> events
+
+1) child cmp will trigger a event -> custom event (user defined event) =>
+
+EventEmitter<T> class
+
+2)when the event -> custom event is fired -> data will be sent
+
+3) the event + @OutPut() -> data can flow out of the cmp
+
+4) Parent cmp is a listener / subscriber for this EVENT so that it can recieve the info / data emitted from the child cmp
+
+===================================================
+
+
+1 way Binding = {{}}
+
+2 way binding => [(ngModel)]
+
+event binding = (click)="methodname($event)" / (customevent)="methodname()"
+
+property binding = [propertyname]="varible"
+
+style binding =[style.font-color] ="red"
+
+class binding= [class.classname]
+
+attribute binding [attr.href]="url"
+
+============================================
+
+
+Building blocks of Angular App
+
+1)Components
+2)Directives
+3)Pipes
+4)Services
+5)Modules
+
+=================================================
+
+Directives => class that has some functionality
+
+directives will be loaded on the CMP
+
+1)All cmps derive from Directive
+2)directives will be loaded on the CMP / component composes   directives
+3) directives alos have selector , they are loaded based on the selector
+4)directives have to be registered in app.module.ts prior to their usage
+==================================================
+
+different types of Directives
+
+1)Predefined Directives
+2)User Defined Directives
+
+===============
+
+
+1)Structural Directives -> modify the DOM (structure of the HTML)
+
+
+
+
+2)Attribute Directives
+a)modify the appearence (look and feel) of the UI
+b)Validations
+
+
+========================================
+
+
+Predefined Directives - Structural Directives
+
+1)*ngFor
+2)*ngIf
+3)ngSwitch
+
+
+Predefined Attribute Directives
+
+ngStyle
+ngClass
+
+=====================================
+
+foreach (var person in people)
+{
+  print (person.name)
+}
+
+
+=====================================
+
+Angular -> Typescript -> Javascript -> for, if else..
+
+inside html -
+
+
+=======================================
+
+Rules of Structural Directives
+
+1) you cannot have more than 1 structural directive on the SAME TAG
+2) ngIf .. how to else / else if
+
+
+ define template ref variable -> identify a template
+ => #
+
+
+==========================
+
+define a template
+
+<ng-template #abc>
+    If isValid is false
+</ng-template>
+
+<div *ngIf="isValid; else abc">
+    If isValid is true
+</div>
+
+============================
+
+3) if you are iterating over large datasets using *ngFor, pls to use 
+
+<ng-template> 
+<ng-container>
+
+placeholders that are invisible @ runtime + they are NOT addedto DOM tree
+
+=========================
+
+difference between <ng-template> and <ng-container>
+
+<ng-container> = will be automatically called
+<ng-template> => has to be explicity called with a #template ref variable
+
+
+=============================
+
+
+
+
+
+
+
+

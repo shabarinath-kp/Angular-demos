@@ -1,0 +1,421 @@
+1)What is SPA
+
+2)Components
+
+3)Binding
+
+4)directives
+
+5)life cycle hooks
+
+==========================================
+
+life cycle hooks
+
+1)All life cycle hooks -> managed by Angular
+2)Constructor()- fires first
+3)life hooks -> interfaces
+4)
+
+==========================================
+
+
+OnInit -> initialization of data sources / variables are to be done here
+OnDestroy -> uninitialization, unsubscription
+
+=======================================
+
+constructor() -> not a life cycle hook, part of the Class
+
+oninit() -> managed by Angular
+
+input bindings -> @Input() -> will be undefined in the constructor()
+
+input bindings -> @Input() -> oninit
+
+======================================
+
+
+AfterContentInit -> when the content is ready to be rendered
+<h1> lkjsdljsdflldf </h1>
+
+AfterViewInit -> when the view is ready to be rendered
+
+====================================
+
+
+
+DoCheck -> customizing the  Change detection 
+
+OnChanges -> fired when the value of the input bindings -> @Input()
+
+prev
+current
+
+SimpleChange
+SimpleChanges
+
+================================
+
+AfterContentChecked -> after the CD has fired on the content that is ready
+AfterViewChecked ->after the CD has fired on the view that is ready
+
+================================
+
+ngDobootstrap() -> 
+
+manual bootstraping of Angular app
+
+================================
+
+AfterViewChecked + @ViewChild() / @ViewChildren()
+
+AfterContentChecked  + @ContentChild / @ContentChildren
+
+=============================
+
+
+@ViewChild() / @ViewChildren()
+
+
+
+
+
+
+
+
+<div> slfsllsjdf </div>
+
+from the cmp (.ts) /js =(document.getElements)
+
+@ViewChild() =>  document.getElementbyTagName/ document.getElementbyID
+
+=====================================
+
+Can a parent cmp call a method that is defined in child cmp
+
+@ViewChild() / @ViewChildren()
+
+
+<div #dynamicDiv>dynamic</div>
+
+=> template referece variables
+
+
+
+
+
+==================
+
+
+AfterContentChecked + @ContentChild / @ContentChildren
+
+=> Content projection /translustion
+
+<ng-content> => template tag
+
+
+=====================
+
+Modal Dialogs /popup dialogboxes
+
+
+
+====================================
+
+@ViewChild /@Viewchildren + ngAfterViewInit
+
+1)  you want to access the method of the child cmp from parent cmp
+2) you have defined a tag in the template (HTML) and you want to access in TS (Component)
+
+
+
+===========================
+
+
+@ContentChild / @ContentChildren + ngAfterContentInit
+
+===========================
+
+Pipes -> building blocks in Angular
+
+ => data conversion
+ => data transformation
+
+===========================
+
+1)convert data from uppercase to lowercase / vice versa
+2)format datetime
+3)format currency ,numbers
+4)convert string into JSON format
+5)localalize my text -> 
+6) searching , sorting, filtering....
+
+============================
+
+Pipes
+
+1)predefined
+
+uppercase
+lowercase
+number / decimal pipe
+
+
+number_expression | number[:digitInfo]
+
+
+
+{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+
+minIntegerDigits : Minimum number of integer digits. Default is 1. 
+minFractionDigits : Minimum number of fraction digits. Default is 0. 
+maxFractionDigits : Maximum number of fraction digits. Default is 3. 
+
+
+num1 = 12.638467846; 
+
+<h1>{{num1 | number}}  </h1> => 12.638
+
+
+
+<h1> {{num1 | number:'3.2-5'}} </h1> => 
+
+012.63846
+ 
+===============
+
+uppercase
+lowercase
+currency
+date 
+slice
+percentage
+keyvalue
+json
+async
+
+========================
+
+Cannot have a pipe in an action expression = bind + pipe
+ 
+by
+
+[(ngModel)] =
+
+[ngModel] ="value | uppercase"
+(ngModelChange) = "value=$event"
+
+
+===================
+
+2)user defined / custom
+
+
+=========================
+
+Pipes
+
+1)pure 
+
+2)impure
+
+============================ 
+
+custom pipes
+
+1) Create exportable class
+2) Class implement pipetransform interface
+3) logic -> transform()
+4)decorate the class  with @pipe()
+5)register the pipe -> app.module.ts
+6)start using the pipe
+
+=================================
+
+
+...args => REST operator
+
+
+
+=================================
+
+
+stateless pipes => forget the state of the last operation / not retain / 
+last op - pure pipes
+
+fire only once
+
+
+stateful pipes -> remember the state of the last operation => impure pipes
+fire n # of times -> performance degradation...
+
+
+
+==========================================
+
+All PRedefined pipes (except async) and USER Defined  are stateless by default
+
+
+uppercase
+lowercase
+currency
+date 
+slice
+percentage
+keyvalue
+json
+
+=====================================
+
+async pipe PRedefined pipe is stateful pipe ->
+
+stateful pipe 
+
+=============================================
+
+Angular is open source..
+
+
+=============================================
+
+chaining of  pipes
+
+
+======================================
+
+
+DI
+Forms programming
+RXJS
+Routing
+
+========================================
+
+DI
+
+
+
+========================================
+
+one of the SOLID principles of S/w programming
+
+based on OOPs
+=======================================
+
+Car Class is dependent on Engine Class
+    Engine Class is dependent on Piston Class
+      Piston Class  is dependent on FuelInjector Class
+         FuelInjector Class  is dependent on Fuel Class
+           Fuel Class  is dependent on FuelType and FuelTank Class
+
+
+tight coupling....
+
+
+=====================================
+
+ IOC / SL / Container
+
+=====================================
+
+i will create an object of Car.. all the dependent classes of car hasto be automatically created by IOC / SL / Container...
+
+
+=================================
+
+
+1)DI promotes loose coupling
+2)unit testing becomes easier..
+
+..
+
+
+======================================= 
+
+
+1)Constructor based Injection
+2)Method based Injection
+3) property based injection / setter based injection
+4)interface based injection
+======================================= 
+
+important aspects of DI in Angular
+
+1) Angular -> supports only Constructor based Injection
+
+2) DI -> hierarchial DI
+
+3) 3 parts of the DI in angular
+
+a)Injector -> every cmp in Angular has a injector object, each cmp has its own copy of the injector object.
+
+inject Dependencies -> Cmp/Directives/Pipes/ etc..
+
+injector is responsible for instantiating the Engine,Piston,FuelType,FuelTank etc.. .a.k.a Dependencies
+
+
+injector will create the dependencies based on metadata
+
+b)provider
+
+this metadata is given by provider
+
+c)dependency objects / dependencies
+ 
+Engine,Piston,FuelType,FuelTank etc.. .a.k.a Dependencies
+=======================================
+
+decorators used in DI
+
+@Inject()
+@Injectable()
+@SkipSelf()
+@Host()
+@optional()
+
+=================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

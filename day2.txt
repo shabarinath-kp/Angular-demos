@@ -1,0 +1,319 @@
+1)incase you donot have the requried s/w.
+
+angular playgrounds
+
+a)codesandbox.io
+b)https://ng-run.com/
+c)stackblitz.com
+
+2) npm config set strict-ssl false -g -> ssl certicate error
+
+3)
+
+===================================================
+
+Building blocks of the Angular App
+
+1)Components
+2)Directives
+3)Pipes
+4)Services
+5)Modules
+
+===================================================
+
+
+Component => Application logic + HTML+ CSS/SCSS/SASS
+
+==================================================
+Angular cmps is based on principles of MVC
+
+M ->
+V -> 
+C ->
+
+
+=================================================
+
+important rules / concepts of the Components in Angular
+
+1)Angular app is made of Building blocks 
+
+2) There will be 1 ROOT component for the whole app
+
+3) Root cmp will load other cmps  
+
+4) Cmps will be loaded in a  hierarchial manner
+
+5) All Cmps have to be registered before usage
+
+6) by default every cmp will have 
+
+a) .ts => source code (Controller as per MVC)
+b) .html => VIEW / UI / PL (View as per MVC)
+c) .css / .scss => Styles
+d) .spec.ts -> unit testing file
+=============================================
+
+3 ways of cmp creation
+
+1) Manual Way
+
+2) using Snippents
+
+3) using Angular CLI
+
+
+=============================================
+
+When you create an app using Angular CLI -> creates a Root Cmp is generated => App.cmponent
+
+==============================================
+
+lets say u want to create => helloworld
+
+helloworld.component.ts
+
+or
+
+helloworld.ts
+
+
+or
+
+project ..
+
+
+=========================
+
+Decorators => annotations => gives metadata info
+
+list of predefined Decorators
+
+@Component()
+@Directive
+@Pipe
+@Injectable
+@Inject
+@Attribute
+@NgModule
+@SkipSelf, @Host,@Optional
+@HostBinding,@HostListener
+@ContentChild/@ContentChildren
+@ViewChild/@ViewChildren
+
+etc..
+
+
+=============================================
+
+<%
+ // server side code 
+ //scriptlets
+%>
+
+
+= in angular 
+
+{{firstName}} -> string interpolation / one way binding // display some data
+
+
+================================================
+
+
+ 
+
+app.module.ts => global declarations,imports etc.
+
+
+selector property to instantiate the cmp / load the cmp as a TAG
+
+==============================================
+
+ng new <<projectname>> = ng new my-app
+
+ng build - compilation
+
+ng serve - running the app
+
+ng serve --open - running the app + load on the browser
+
+
+ng s --o
+
+
+===============================================
+
+1) create an exportable class with source code 
+
+2) decorate the class with @Component() decorate
+
+3) import {Component} from '@angular/core';
+
+4) specify the selector and write html
+
+5) load the cmp in root cmp's html using the selector as a tag
+
+6)register the cmp in declaration array of app.module.ts
+
+7)ng serve --o
+
+
+======================================
+
+in NodeJS -> client side http servers
+
+a)lite-server
+b)http-server
+c)json-server
+
+...
+
+d)Webpack => client side http server + Bundling and Minification => used by Angular CLI  by default
+
+runs on 4200 port
+
+
+
+
+
+
+Server side servers => Tomcat / weblogic / websphere / IIS
+
+======================================
+using Snippents
+
+
+=====================================
+
+using Angular CLI
+
+ng generate component nameofthecomponent
+
+ng g c compontename
+
+
+================================
+
+Bootstrapping of the angular App (Execution Flow of the App)
+
+ng serve --open => run
+
+a) webpack loads the landing page => index.html
+
+index.html => <app-root> => main.js -> AppModule -> bootstrap -> AppComponent
+ ->
+
+<app-root>
+
+
+===========================
+
+CSS Bootstrap -> Responsive Web Designing 
+
+
+================================
+Bindings  => how the Data should be passed into cmp and out of the cmp
+
+
+one way binding -> data flow is one way only
+
+data is flown from Cmp to VIEW
+=============================================
+ 
+two way binding = > bi directional data flow
+
+data is flown from Cmp to VIEW and vice versa
+
+1) ngModel
+2) ngModel - is in a seperate namespace / package which has to be imported
+
+<input type="text" [(ngModel)]="firstName"> 
+<input type="text" [(ngModel)]="lastName">
+
+[(ngModel)] => "bananna in the box"
+
+=============================================
+
+event binding
+
+Attaching a method to a event listener so that when the event is triggered -> that method is executed /invoked
+
+
+in js
+
+function f1()
+{
+//
+}
+
+<input type="button" onclick="f1()">
+
+<input type="button" (click)="f1()">
+<input type="button" (keyup)="f1()">
+<input type="button" (keypress)="f1()">
+<input type="button" (mousehover)="f1()">
+<input type="button" (mousein)="f1()">
+<input type="button" (blur)="f1()">
+
+$event => is the reserved word that will give you event details
+
+
+ 
+=====================================
+
+
+
+
+
+
+=============================================
+
+property binding
+ class bindings
+ style bindings
+ attribute bindings
+
+=====================================
+
+
+IF you get a Blank Screen => when you run the app
+
+=> there is a ERROR
+
+
+=====================================
+
+Forms prg
+
+====================================
+
+
+property binding
+ class bindings
+ style bindings
+
+=================================
+
+<img src
+<td colspan=""
+
+==================================
+
+ attribute bindings
+
+ when you want to pass a value from the comp to attribute of a tag 
+
+  
+
+<td [attr.colspan] ='datamember'>
+
+<img [attr.src]="path"> where path is the variable in cmp
+
+<a [attr.href]="url"> url is the variable defined in the cmp
+
+==================================
+
+<td style="forecolor:red">
+
+

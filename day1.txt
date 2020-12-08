@@ -1,0 +1,334 @@
+1) Define a WebPage -> Collection of Data
+
+2)Create a WebSite -> collection of Web pages
+
+3)One way of Classification of WebSites
+
+a)Multi Page App => default
+
+b)Single Page Application (SPA) -> behavoir entire site is made upf a single page
+ 
+1)Gmail
+2)twitter
+3)Paypal
+4)Flipkart
+
+etc..
+
+===============================
+
+Single Page Application (SPA)
+
+1) no page reload / refresh / postbacks
+2) url doesnot change / partial change to the url
+
+
+==============================
+
+
+how to design a Single Page Application (SPA)
+
+We are not concerned abt the server side tech -> JSP/Asp/Asp.net MVC / Python / PHP etc..
+
+Our main focus will client side tech -> JS defacto client side 
+
+=============================
+
+Use some lib / frameworks designed for building an SPA
+
+1)ReactJS -> lib 
+2)VueJS 
+3)Angular -> framework -> Google
+
+AngularJS
+
+Angular 11.x
+
+=========================
+
+Limitations of SPA
+
+1)Not SEO friendly (Angular Universal)
+2)Static page rendering tech
+3)Security
+=======================
+
+Design SPA using Angular
+
+1) Programming in Typescript -> Why Typescript -> JS has limitations
+
+============================
+
+limitations of JS
+
+1) JS is not browser compatibile
+
+2)OOPs support-> YES / NO
+
+3) error handling is difficult / tedious
+
+4) issues w.r.t data types
+
+a) weakly typed
+
+ var x;
+
+b) type coercion issues
+
+5)ambiguity w.r.t function calls
+
+
+=========================
+
+JS -> has versions
+
+ES3 -> legacy JS -> IE 8/9..
+
+ES6 / ES2015
+ES7 ES 2016 / 2017
+
+========================
+
+Code Angular
+
+1)DART - Programming Language from Google
+2)Typescript -default Language 
+
+
+=======================
+
+
+Typescript (TS)
+
+=> superset of Javascript
+
+=> transpiled language
+
+compilation => converting source code to machine /binary code
+=> Transpilation => converting source code to  another form of soruce cod
+
+=>browsers donot understand TS
+
+-> TS program will be transpiled into JS->
+
+->case sensitive
+
+-> extn -> .ts
+
+-> tsc => compiler
+
+=====================
+
+DataTypes
+
+1)number-> 
+
+2)string
+
+3)boolean
+
+4)undefined
+
+5)null
+
+
+=> everything is derived from the based type => any
+
+===================================
+
+
+int x;
+
+string str;
+
+=====================================
+
+str:string
+
+=============================================
+
+Angular setup : 
+
+1)Install NodeJS > 10
+
+2)IDE -> WebStorm / VIM / Sublime / Brackets / Emacs / Eclipse / VS Code /
+Intelli j
+
+3)Chrome / FF, Opera , Safari, Edge
+
+
+Default  no support for IE
+
+But you need to enable
+
+===========================================
+
+Good internet
+
+
+Create and design ang app ->
+
+install Angular CLI = > tool  -> creating,compilation,execution,debugging,testing,deploy
+
+===========================================
+
+
+1) npm -> node package manager to download angular packages
+
+
+node package manager -> install Node.js
+
+2)yarn download angular packages
+
+
+======================================
+
+
+get started
+
+
+==========
+
+1) install angular cli  ->  npm install -g @angular/cli@8
+
+2) ng --version
+
+3)ng new my-app
+
+====================
+
+folders / files of angular app
+
+1)node_modules -> all the packages of Angular application downloaded
+
+2)package.json -> List of packages along with version nos
+
+scripts section / block -> List of commands for the app
+{
+ 
+}
+
+dependencies -> List of packages used for Dev + PRoduction env
+{
+
+}
+
+devDependencies -> List of packages used for only for Dev  
+{
+
+}
+
+
+=======================================================
+
+tsconfig.json / tsconfig.app.json => TS config
+
+
+=======================================================
+
+
+tslint.json =>  set of rules -> linting
+
+=====================================================
+
+ 
+Karma + Jasmine
+
+JEST + Enzyme
+
+Chai + Mocha
+
+Cypress
+
+===============================================
+
+e2e => end to end testing -> Protractor
+
+===========================================
+
+src
+
+app -> app logic / source code
+
+
+assets -> store images,fonts,xml,json etc
+
+=======================================
+
+envoirnments
+
+======================================
+
+index.html -> landing page
+
+====================================
+
+main.ts = main()
+
+===============================
+
+style.css -> global CSS
+
+=================================
+
+angular.json -> complete proj configuration
+
+================================
+
+polyfill.ts  -> file that has list of packages that will enable the app to support something which it default doesnot support
+
+
+IE
+
+
+=================================
+
+package-lock.json - 
+exact version of the package that is downloaded,
+origin
+
+
+
+packages versions that are mentioned in package.json have
+
+1)caret -> ^ => ^1.1=> 1.1.x
+
+2)tilde - ~ => ~1.1 => 1.1 
+
+indicate precise version of the package...
+
+Angular follows Semantic Versioning -> major.minor.build
+
+==========================================
+
+
+
+========================================
+
+AngularJS => 1.x
+
+Angular (2,4,5,6,7,8,9,10,11)
+
+
+
+====================================
+
+lets say you are using angular 7 and you want to upgrade to angular 8
+
+1) uninstall angular cli
+
+npm uninstall -g @angular/cli
+
+2)reinstall angular cli
+
+npm install -g @angular/cli@8
+
+==========================================
+
+
+
+
+
+
+
+
